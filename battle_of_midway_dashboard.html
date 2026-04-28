@@ -17,7 +17,660 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 .btag::before{content:'●';animation:blink 1.5s infinite;color:var(--orange)}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
 .hdr h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,56px);color:var(--gold);line-height:1;letter-spacing:3px;text-shadow:0 0 40px rgba(201,168,50,0.3)}
+.hdr h1 span{color:var(--orange)}<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Battle of Midway — The Rub Club</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1E1208;--bg2:#261810;--bg3:#2E1E12;--bg4:#341e10;--gold:#C9A832;--gdim:#8a7022;--cream:#F5E6D3;--teal:#5ECECE;--orange:#E8622A;--red:#C0392B;--green:#27AE60;--dim:#a89070;--bdr:rgba(201,168,50,0.2);--bdrb:rgba(201,168,50,0.5)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Oswald',sans-serif;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);pointer-events:none;z-index:9999}
+.hdr{background:linear-gradient(135deg,#0d0804 0%,var(--bg2) 50%,#0d0804 100%);border-bottom:3px solid var(--gold);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.hdr::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 60px,rgba(201,168,50,.03) 60px,rgba(201,168,50,.03) 61px)}
+.hl{position:relative;z-index:1}
+.btag{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;color:var(--orange);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.btag::before{content:"";width:8px;height:8px;background:var(--orange);border-radius:50%;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.hdr h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(32px,5vw,56px);color:var(--gold);line-height:1;letter-spacing:3px;text-shadow:0 0 40px rgba(201,168,50,.3)}
 .hdr h1 span{color:var(--orange)}
+.hsub{font-size:13px;color:var(--dim);letter-spacing:2px;margin-top:6px;font-weight:300}
+.hr{display:flex;flex-direction:column;align-items:flex-end;gap:8px;position:relative;z-index:1}
+.rbadge{background:var(--orange);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;padding:6px 16px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
+.ptag{font-size:11px;color:var(--gdim);letter-spacing:2px}
+.tabbar{background:var(--bg2);border-bottom:2px solid var(--bdr);display:flex;overflow-x:auto;padding:0 32px;scrollbar-width:none}
+.tabbar::-webkit-scrollbar{display:none}
+.tab{font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;color:var(--dim);padding:16px 20px;cursor:pointer;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
+.tab:hover{color:var(--cream)}.tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.cnt{padding:32px;max-width:1400px;margin:0 auto}
+.panel{display:none}.panel.active{display:block}
+.sh{display:flex;align-items:baseline;gap:16px;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--bdr)}
+.st{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:3px;color:var(--gold)}
+.ss{font-size:13px;letter-spacing:2px;color:var(--dim);font-weight:300}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:1100px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.g2,.g3,.g4{grid-template-columns:1fr}.cnt{padding:16px}}
+.card{background:var(--bg2);border:1px solid var(--bdr);padding:20px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--bdrb);transform:translateY(-2px)}
+.card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold)}
+.card.or::before{background:var(--orange)}.card.tl::before{background:var(--teal)}.card.rd::before{background:var(--red)}.card.gn::before{background:var(--green)}
+.clbl{font-size:12px;letter-spacing:3px;color:var(--dim);margin-bottom:8px}
+.ctit{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:2px;color:var(--cream);line-height:1.1}
+.cmta{font-size:14px;color:var(--dim);margin-top:6px}
+.cbody{font-family:'Lora',serif;font-size:14px;color:var(--dim);line-height:1.6;font-style:italic;margin-top:10px}
+.sr{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.sp{background:var(--bg3);border:1px solid var(--bdr);padding:16px 20px;text-align:center}
+.spn{font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--gold);line-height:1}
+.spl{font-size:12px;letter-spacing:2px;color:var(--dim);margin-top:4px}
+@media(max-width:700px){.sr{grid-template-columns:repeat(2,1fr)}}
+.cbox{background:linear-gradient(135deg,rgba(201,168,50,.08),rgba(232,98,42,.05));border:1px solid var(--bdrb);border-left:4px solid var(--gold);padding:24px 28px;margin-bottom:32px}
+.cbox p{font-family:'Lora',serif;font-size:16px;line-height:1.8;color:var(--cream);margin-bottom:12px}
+.cbox p:last-child{margin-bottom:0}
+.cbox strong{color:var(--gold);font-style:italic}
+.cbox.warn{border-left-color:var(--red);background:linear-gradient(135deg,rgba(192,57,43,.1),rgba(200,0,0,.03))}
+.cbox.warn p{color:#f0c0b0}
+.tw{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:2px;color:var(--gold);text-align:left;padding:10px 14px;background:rgba(201,168,50,.08);border-bottom:2px solid var(--bdrb);white-space:nowrap}
+.tbl td{padding:10px 14px;border-bottom:1px solid var(--bdr);color:var(--dim);vertical-align:middle}
+.tbl tr:hover td{background:rgba(201,168,50,.04);color:var(--cream)}
+.tbl td.hi{color:var(--cream)}.tbl td.go{color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:16px}
+.tbl td.gv{color:#2ecc71}.tbl td.rv{color:#e74c3c}.tbl td.tv{color:var(--teal)}
+.s1{color:#27AE60;font-weight:700}.s2{color:#2ecc71}.sm{color:var(--cream)}.sb{color:#e8a87c}.s5{color:#e74c3c}.s6{color:#C0392B;font-weight:700}
+.pc{background:var(--bg3);border:1px solid var(--bdr);padding:13px 16px;display:flex;align-items:center;gap:13px;margin-bottom:4px;transition:all .2s}
+.pc:hover{border-color:var(--bdrb);background:var(--bg4)}
+.prk{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gdim);min-width:28px;line-height:1}
+.pi{flex:1}
+.pn{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:var(--cream);line-height:1}
+.ptp{font-size:13px;color:var(--dim);letter-spacing:1px;margin-top:3px}
+.pnote{font-family:'Lora',serif;font-size:13px;color:var(--dim);font-style:italic;margin-top:5px}
+.bdg{font-size:11px;letter-spacing:2px;padding:3px 8px;font-weight:600;white-space:nowrap}
+.bfl{background:rgba(192,57,43,.2);color:#e74c3c;border:1px solid rgba(192,57,43,.4)}
+.bfe{background:rgba(39,174,96,.2);color:#2ecc71;border:1px solid rgba(39,174,96,.4)}
+.bfr{background:rgba(94,206,206,.2);color:var(--teal);border:1px solid rgba(94,206,206,.4)}
+.bhl{background:rgba(201,168,50,.2);color:var(--gold);border:1px solid var(--gdim)}
+.bucp{background:rgba(120,0,0,.3);color:#ff6666;border:1px solid rgba(192,57,43,.3)}
+.pill{display:inline-block;padding:3px 9px;font-size:11px;letter-spacing:1px;border-radius:3px;font-weight:700;vertical-align:middle}
+.pr{background:#8B0000;color:#FFD700}.pb{background:#003087;color:#FFF}.ps{background:#4B0082;color:#cc88ff}
+.pk{background:#E74C3C;color:#FFF}.pbu{background:#006400;color:#ff6666}.pra{background:#006B3C;color:#FFF}
+.pe{background:#003087;color:#FFD700}.pbo{background:#7B3F00;color:#FFD700}.ppa{background:#222;color:#FFF}
+.pma{background:#8B0000;color:#FFD700}.psh{background:#008B8B;color:#FFF}.pdo{background:#C2185B;color:#FFF}
+.pta{background:#00CED1;color:#000}.pwa{background:#333;color:#aaa}.pkn{background:#002B5C;color:#FFD700}
+.pdr{background:#CC0000;color:#fff}.pel{background:#00A7E1;color:#002244}.pbr{background:#FF0000;color:#FFD700}
+.pra2{background:#6BBE45;color:#000}.pbun{background:#D30000;color:#fff}
+.bg-bye{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-bottom:24px}
+.br{background:var(--bg3);border:1px solid var(--bdr);padding:8px 6px;text-align:center}
+.brn{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:1px;color:var(--gold);margin-bottom:6px}
+.bt{font-size:12px;color:var(--dim);padding:2px 0}.bt.big{color:var(--orange);font-weight:600}
+@media(max-width:700px){.bg-bye{grid-template-columns:repeat(4,1fr)}}
+.pos-sec{margin-bottom:48px}
+.ph{background:linear-gradient(90deg,rgba(201,168,50,.15),transparent);border-left:4px solid var(--gold);padding:12px 20px;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+.ph.or{border-left-color:var(--orange);background:linear-gradient(90deg,rgba(232,98,42,.15),transparent)}
+.ph.tl{border-left-color:var(--teal);background:linear-gradient(90deg,rgba(94,206,206,.15),transparent)}
+.ph.rd{border-left-color:var(--red);background:linear-gradient(90deg,rgba(192,57,43,.15),transparent)}
+.phn{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;color:var(--gold)}
+.phnote{font-family:'Lora',serif;font-size:14px;color:var(--dim);font-style:italic}
+.og{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:700px){.og{grid-template-columns:1fr}}
+.oth{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;padding:12px 16px;margin-bottom:2px}
+.onsw{background:linear-gradient(90deg,#003087,#002060);color:#FFD700}
+.oqld{background:linear-gradient(90deg,#8B0000,#600000);color:#FFD700}
+.or2{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--bg3);border-bottom:1px solid var(--bdr);gap:8px}
+.or2:hover{background:var(--bg4)}.opl{font-size:16px;color:var(--cream);font-weight:500}
+.ocv{font-size:13px;color:var(--teal);font-style:italic;text-align:right}
+.dt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(185px,1fr));gap:12px}
+.dt-card{background:var(--bg3);border:1px solid var(--bdr);padding:16px;position:relative}
+.dt-pos{font-family:'Bebas Neue',sans-serif;font-size:12px;letter-spacing:3px;color:var(--orange);margin-bottom:5px}
+.dt-name{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;color:var(--gold);line-height:1.1}
+.dt-sub{font-size:13px;color:var(--dim);margin-top:4px}
+.dt-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.toplist{counter-reset:tl}
+.tli{counter-increment:tl;display:flex;align-items:flex-start;gap:14px;padding:13px 16px;background:var(--bg3);border:1px solid var(--bdr);margin-bottom:4px;transition:all .2s}
+.tli:hover{border-color:var(--bdrb);background:var(--bg4)}
+.tli::before{content:counter(tl);font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--gdim);min-width:28px;line-height:1}
+.tli-body{flex:1}
+.tli-name{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;color:var(--cream)}
+.tli-note{font-family:'Lora',serif;font-size:14px;color:var(--dim);font-style:italic;margin-top:4px}
+.plbl{font-family:'Bebas Neue',sans-serif;font-size:15px;letter-spacing:2px;color:var(--teal);margin-bottom:8px;margin-top:16px}
+.dvd{border:none;border-top:1px solid var(--bdr);margin:32px 0}
+.ftr{text-align:center;padding:32px;border-top:1px solid var(--bdr);margin-top:48px}
+.flog{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:4px;color:var(--gdim)}
+::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--gdim);border-radius:3px}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hl">
+    <div class="btag">LIVE ANALYSIS &mdash; THE RUB CLUB</div>
+    <h1>BATTLE OF <span>MIDWAY</span></h1>
+    <div class="hsub">DRAFT SUPERCOACH &middot; SOS FLIP ANALYSIS &middot; ROUNDS 9&ndash;16 &middot; patreon.com/rubberstats</div>
+  </div>
+  <div class="hr">
+    <img id="rub-logo" src="https://raw.githubusercontent.com/TheRubDown/TheRubDown.github.io/refs/heads/main/the_rub_logo.png" 
+         onerror="this.style.display='none'" 
+         style="height:60px;object-fit:contain;opacity:0.9;filter:drop-shadow(0 0 8px rgba(201,168,50,0.4))">
+    <div class="rbadge">ROUNDS 9&ndash;16</div>
+  </div>
+</div>
+
+<div class="tabbar">
+  <div class="tab active" onclick="showTab('ov',this)">OVERVIEW</div>
+  <div class="tab" onclick="showTab('sos',this)">SOS TABLES</div>
+  <div class="tab" onclick="showTab('flips',this)">TOP FLIPS</div>
+  <div class="tab" onclick="showTab('fetches',this)">TOP FETCHES</div>
+  <div class="tab" onclick="showTab('frothies',this)">FREE AGENT FROTHIES</div>
+  <div class="tab" onclick="showTab('pos',this)">POSITIONAL</div>
+  <div class="tab" onclick="showTab('origin',this)">ORIGIN</div>
+  <div class="tab" onclick="showTab('dream',this)">DREAM TEAM</div>
+</div>
+
+<div class="cnt">
+
+<!-- OVERVIEW -->
+<div id="panel-ov" class="panel active">
+  <div class="sr">
+    <div class="sp"><div class="spn" style="color:var(--red)">15</div><div class="spl">TOP FLIP CANDIDATES</div></div>
+    <div class="sp"><div class="spn" style="color:var(--green)">15</div><div class="spl">TOP FETCH TARGETS</div></div>
+    <div class="sp"><div class="spn" style="color:var(--teal)">15</div><div class="spl">FREE AGENT FROTHIES</div></div>
+    <div class="sp"><div class="spn">7</div><div class="spl">TEAMS &mdash; DOUBLE BYES</div></div>
+  </div>
+  <div class="cbox">
+    <p>The draw flips at R9. <strong>Act now or regret it.</strong></p>
+    <p><strong>Roosters</strong> are the most dramatic flip in the comp &mdash; dead last R1&ndash;8 (#15), best draw R9&ndash;16 (#1). Prices suppressed. Get them in now. <strong>Manly</strong> is the mirror image &mdash; best draw R1&ndash;8 (#1), worst draw R9&ndash;16 (#17). Prices still inflated. Sell everything now.</p>
+    <p><strong>Knights jumping from #16 to #3</strong> is massively underrated by the market. <strong>Titans dropping from #2 to #14</strong> is a trap &mdash; looked good early but the draw is about to bite hard.</p>
+    <p>Free kicks: <strong>Tracey, Galvin, Tuala, McEwen, Siua Wong, Crichton</strong> &mdash; best draws, underpriced, low ownership. Get in before the comp wakes up.</p>
+  </div>
+
+  <div class="sh"><div class="st">BYE SCHEDULE R9&ndash;16</div><div class="ss">PLAN YOUR TRADES NOW</div></div>
+  <div class="bg-bye">
+    <div class="br"><div class="brn">R9</div><div class="bt big">Dragons</div></div>
+    <div class="br"><div class="brn">R10</div><div class="bt big">Warriors</div></div>
+    <div class="br"><div class="brn">R11</div><div class="bt big">Raiders</div></div>
+    <div class="br"><div class="brn" style="color:var(--red)">R12 BIG BYE</div><div class="bt big">Broncos</div><div class="bt big">Sharks</div><div class="bt big">Knights</div><div class="bt big">Eels</div><div class="bt big">Panthers</div><div class="bt big">Roosters</div><div class="bt big">Tigers</div></div>
+    <div class="br"><div class="brn">R13 Mini</div><div class="bt">Dolphins</div><div class="bt">Titans</div><div class="bt">Bunnies</div></div>
+    <div class="br"><div class="brn">R14</div><div class="bt big">Warriors</div></div>
+    <div class="br"><div class="brn" style="color:var(--red)">R15 BIG BYE</div><div class="bt big">Bulldogs</div><div class="bt big">Manly</div><div class="bt big">Storm</div><div class="bt big">Knights</div><div class="bt big">Cowboys</div><div class="bt big">Panthers</div><div class="bt big">Dragons</div></div>
+    <div class="br"><div class="brn">R16 Mini</div><div class="bt">Broncos</div><div class="bt">Eels</div><div class="bt">Bunnies</div></div>
+  </div>
+
+  <hr class="dvd">
+  <div class="sh"><div class="st">TEAMS WITH 1 BYE + SEXY SOS</div><div class="ss">BUILD AROUND THESE</div></div>
+  <div class="tw"><table class="tbl">
+    <thead><tr><th>#</th><th>TEAM</th><th>BYE R9-16</th><th>SOS RANK R9-16</th><th>VERDICT</th></tr></thead>
+    <tbody>
+      <tr><td class="go">1</td><td><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span></td><td>R12</td><td class="s1">#1</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">&#128293; Golden trio. Best draw in comp. Buy every Rooster.</td></tr>
+      <tr><td class="go">2</td><td><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span></td><td>R15</td><td class="s1">#2</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">&#128293; Buy hard. Galvin, Tuala, Tracey, Burton, Kikau.</td></tr>
+      <tr><td class="go">3</td><td><span class="pill ps" data-team="STORM">STORM</span></td><td>R12</td><td class="s2">#4</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">&#128293; One bye, top 4 SOS. Meaney, Munster, Coates.</td></tr>
+      <tr><td class="go">4</td><td><span class="pill pra" data-team="RAIDERS">RAIDERS</span></td><td>R11 (earliest)</td><td class="s2">#6</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">Sneaky good. Kris, Timoko, Sanders, Martin.</td></tr>
+      <tr><td class="go">5</td><td><span class="pill pbo" data-team="COWBOYS">COWBOYS</span></td><td>R15</td><td class="sm">#8</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">Workable. KP, Heilum Luki.</td></tr>
+      <tr><td class="go">6</td><td><span class="pill pk" data-team="TIGERS">TIGERS</span></td><td>R12</td><td class="sb">#12</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">&#9888; One bye but hardening SOS. Sell Tigers players now.</td></tr>
+      <tr><td class="go">7</td><td><span class="pill psh" data-team="SHARKS">SHARKS</span></td><td>R12</td><td class="s5">#16</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">&#128308; One bye but terrible SOS. The bye doesn't save them.</td></tr>
+      <tr><td class="go">8</td><td><span class="pill pdo" data-team="DOLPHINS">DOLPHINS</span></td><td>R13</td><td class="s5">#13</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">&#128308; Avoid.</td></tr>
+      <tr><td class="go">9</td><td><span class="pill pta" data-team="TITANS">TITANS</span></td><td>R13</td><td class="s5">#14</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">&#128308; Looked good early. Draw bites hard R9-16.</td></tr>
+      <tr><td class="go">10</td><td><span class="pill pma" data-team="MANLY">MANLY</span></td><td>R15</td><td class="s6">#17</td><td style="font-family:'Lora',serif;font-style:italic;font-size:12px">&#128308; SELL EVERYTHING. Worst SOS in comp.</td></tr>
+    </tbody>
+  </table></div>
+
+  <hr class="dvd">
+  <div class="sh"><div class="st">NUCLEAR AVOIDS</div><div class="ss">DOUBLE BYE + SHIT SOS</div></div>
+  <div class="cbox warn">
+    <p><strong>Dragons</strong> &mdash; worst of both worlds. R9 bye gone, R15 coming, SOS #16. Sell every Dragon-coloured player.</p>
+    <p><strong>Broncos</strong> &mdash; double bye (R12+R16) + SOS #15 + Origin carnage (Haas, Carrigan). Three reasons to sell.</p>
+    <p><strong>Panthers</strong> &mdash; double bye (R12+R15) + SOS #13 + Origin (Cleary, Martin, To'o). The trifecta of pain.</p>
+    <p><strong>Nuance:</strong> Knights (#3 SOS) and Bunnies (#5 SOS) have decent draws despite two byes &mdash; don't lump them with the nuclear tier.</p>
+  </div>
+</div>
+
+<!-- SOS TABLES -->
+<div id="panel-sos" class="panel">
+  <div class="sh"><div class="st">OVERALL SOS FLIP</div><div class="ss">QUICK START R1-8 vs BATTLE OF MIDWAY R9-16</div></div>
+  <div class="tw"><table class="tbl">
+    <thead><tr><th>QS RANK</th><th>TEAM</th><th>QS AVG</th><th>QS OPP</th><th>QS SOS</th><th></th><th>BOM AVG</th><th>BOM OPP</th><th>BOM SOS</th><th>BOM RANK</th><th>SHIFT</th></tr></thead>
+    <tbody>
+      <tr><td class="go">1</td><td><span class="pill pma" data-team="MANLY">MANLY</span></td><td>801.3</td><td>836.5</td><td class="s1">89</td><td style="color:var(--gdim)">&rarr;</td><td>801.3</td><td>758.1</td><td class="s6">40</td><td class="s6">17</td><td class="rv">&#9660; 16</td></tr>
+      <tr><td class="go">2</td><td><span class="pill ppa" data-team="PANTHERS">PANTHERS</span></td><td>875.3</td><td>816.1</td><td class="s1">85</td><td style="color:var(--gdim)">&rarr;</td><td>875.3</td><td>789.1</td><td class="s5">52</td><td class="s5">13</td><td class="rv">&#9660; 11</td></tr>
+      <tr><td class="go">3</td><td><span class="pill pwa" data-team="WARRIORS">WARRIORS</span></td><td>813.2</td><td>803.5</td><td class="s2">78</td><td style="color:var(--gdim)">&rarr;</td><td>813.2</td><td>812.2</td><td class="sm">63</td><td class="sm">7</td><td class="rv">&#9660; 4</td></tr>
+      <tr><td class="go">4</td><td><span class="pill pta" data-team="TITANS">TITANS</span></td><td>735.6</td><td>822.8</td><td class="s2">78</td><td style="color:var(--gdim)">&rarr;</td><td>735.6</td><td>773.6</td><td class="s5">49</td><td class="s5">14</td><td class="rv">&#9660; 10</td></tr>
+      <tr><td class="go">5</td><td><span class="pill pbo" data-team="COWBOYS">COWBOYS</span></td><td>824.5</td><td>802.4</td><td class="s2">78</td><td style="color:var(--gdim)">&rarr;</td><td>824.5</td><td>797.4</td><td class="sm">62</td><td class="sm">8</td><td class="rv">&#9660; 3</td></tr>
+      <tr><td class="go">6</td><td><span class="pill ps" data-team="STORM">STORM</span></td><td>781.8</td><td>800.6</td><td class="s2">75</td><td style="color:var(--gdim)">&rarr;</td><td>781.8</td><td>807.8</td><td class="s1">71</td><td class="s2">3</td><td class="gv">&#9650; 3</td></tr>
+      <tr><td class="go">7</td><td><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span></td><td>766.3</td><td>809.7</td><td class="s2">73</td><td style="color:var(--gdim)">&rarr;</td><td>766.3</td><td>811.8</td><td class="s1">71</td><td class="s1">4</td><td class="gv">&#9650; 3</td></tr>
+      <tr><td class="go">8</td><td><span class="pill pbr" data-team="BRONCOS">BRONCOS</span></td><td>753.2</td><td>795.1</td><td class="s2">73</td><td style="color:var(--gdim)">&rarr;</td><td>753.2</td><td>776.5</td><td class="s5">43</td><td class="s5">16</td><td class="rv">&#9660; 8</td></tr>
+      <tr><td class="go">9</td><td><span class="pill pk" data-team="TIGERS">TIGERS</span></td><td>907.8</td><td>814.3</td><td class="s2">73</td><td style="color:var(--gdim)">&rarr;</td><td>907.8</td><td>787.7</td><td class="sm">58</td><td class="sm">10</td><td class="rv">&#9660; 1</td></tr>
+      <tr><td class="go">10</td><td><span class="pill pdr" data-team="DRAGONS">DRAGONS</span></td><td>721.4</td><td>796.8</td><td class="s2">72</td><td style="color:var(--gdim)">&rarr;</td><td>721.4</td><td>795.7</td><td class="s5">53</td><td class="s5">12</td><td class="rv">&#9660; 2</td></tr>
+      <tr><td class="go">11</td><td><span class="pill pbun" data-team="BUNNIES">BUNNIES</span></td><td>832.8</td><td>802.0</td><td class="sm">68</td><td style="color:var(--gdim)">&rarr;</td><td>832.8</td><td>813.3</td><td class="s2">61</td><td class="s2">9</td><td class="gv">&#9650; 2</td></tr>
+      <tr><td class="go">12</td><td><span class="pill pra" data-team="RAIDERS">RAIDERS</span></td><td>783.6</td><td>784.7</td><td class="sm">62</td><td style="color:var(--gdim)">&rarr;</td><td>783.6</td><td>802.1</td><td class="s1">67</td><td class="s2">5</td><td class="gv">&#9650; 7</td></tr>
+      <tr><td class="go">13</td><td><span class="pill pel" data-team="EELS">EELS</span></td><td>727.9</td><td>778.4</td><td class="sm">62</td><td style="color:var(--gdim)">&rarr;</td><td>727.9</td><td>820.2</td><td class="s2">67</td><td class="s2">6</td><td class="gv">&#9650; 7</td></tr>
+      <tr><td class="go">14</td><td><span class="pill psh" data-team="SHARKS">SHARKS</span></td><td>808.3</td><td>785.3</td><td class="sb">56</td><td style="color:var(--gdim)">&rarr;</td><td>808.3</td><td>767.3</td><td class="s5">44</td><td class="s5">15</td><td class="rv">&#9660; 1</td></tr>
+      <tr style="background:rgba(39,174,96,.06)"><td class="go">15</td><td><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span></td><td>840.2</td><td>786.6</td><td class="sb">56</td><td style="color:var(--gold);font-weight:700">&rarr;</td><td>840.2</td><td>817.2</td><td class="s1">76</td><td class="s1">1</td><td class="gv" style="font-weight:700">&#9650; 14 &#128293;</td></tr>
+      <tr style="background:rgba(39,174,96,.06)"><td class="go">16</td><td><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span></td><td>793.9</td><td>769.1</td><td class="s5">52</td><td style="color:var(--gold);font-weight:700">&rarr;</td><td>793.9</td><td>827.9</td><td class="s1">74</td><td class="s1">2</td><td class="gv" style="font-weight:700">&#9650; 14 &#128293;</td></tr>
+      <tr><td class="go">17</td><td><span class="pill pdo" data-team="DOLPHINS">DOLPHINS</span></td><td>810.7</td><td>763.7</td><td class="s6">41</td><td style="color:var(--gdim)">&rarr;</td><td>810.7</td><td>785.4</td><td class="sm">56</td><td class="sm">11</td><td class="gv">&#9650; 6</td></tr>
+    </tbody>
+  </table></div>
+
+  <hr class="dvd">
+  <div class="sh"><div class="st">BIGGEST SOS FLIPS</div><div class="ss">WORST TO BEST AND BEST TO WORST</div></div>
+  <div class="g2">
+    <div>
+      <div class="ph"><div class="phn">&#128640; WORST &rarr; BEST</div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> #15 &rarr; #1</div><div class="pnote">Tedesco #10&rarr;#1 &middot; Walker #17&rarr;#1 &middot; DCE #16&rarr;#1</div></div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> #16 &rarr; #3</div><div class="pnote">Marzhew #10&rarr;#4 &middot; Hunt/Bradman #12&rarr;#4 &middot; McEwen #17&rarr;#1</div></div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> #12 &rarr; #7</div><div class="pnote">Seb Kris #14&rarr;#1 &middot; Timoko #16&rarr;#1 &middot; Sanders #14&rarr;#4 &middot; Martin #11&rarr;#2</div></div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> #7 &rarr; #2</div><div class="pnote">Enari Tuala #13&rarr;#2 &middot; Marcelo Montoya #14&rarr;#1</div></div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill ps" data-team="STORM">STORM</span> #4 &rarr; #4</div><div class="pnote">Consistent. Munster #8&rarr;#3 &middot; Meaney #8&rarr;#3 &middot; Coates #8&rarr;#2</div></div></div>
+    </div>
+    <div>
+      <div class="ph rd"><div class="phn" style="color:var(--red)">&#128308; BEST &rarr; WORST</div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill pma" data-team="MANLY">MANLY</span> #1 &rarr; #17</div><div class="pnote">Hopoate #1&rarr;#12 &middot; Brooks #1&rarr;#16 &middot; Fogarty #1&rarr;#17 &middot; Ben Trbo #1&rarr;#15</div></div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill pta" data-team="TITANS">TITANS</span> #2 &rarr; #14</div><div class="pnote">Campbell #5&rarr;#12 &middot; Arama Hau #5&rarr;#12. Trap city.</div></div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill ppa" data-team="PANTHERS">PANTHERS</span> #3 &rarr; #11</div><div class="pnote">Jenkins #3&rarr;#16 &middot; McLean #3&rarr;#13 &middot; Talagi #3&rarr;#13 &middot; Cleary #2&rarr;#14</div></div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill pdr" data-team="DRAGONS">DRAGONS</span> SOS #16 + DOUBLE BYE</div><div class="pnote">R9 gone, R15 coming. Absolute nuclear avoid.</div></div></div>
+      <div class="pc"><div class="pi"><div class="pn"><span class="pill pbr" data-team="BRONCOS">BRONCOS</span> SOS #15 + DOUBLE BYE + ORIGIN</div><div class="pnote">Haas, Carrigan both Origin. Double bye R12+R16. Three reasons to sell.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FLIPS -->
+<div id="panel-flips" class="panel">
+  <div class="sh"><div class="st">TOP 15 FLIP CANDIDATES</div><div class="ss">SELL NOW &mdash; HARD SCHEDULE INCOMING</div></div>
+  <div class="cbox warn"><p>These players have <strong>overachieved heading into a tough schedule</strong>. Prices are inflated. Cash in before the market catches up.</p></div>
+  <div class="toplist">
+    <div class="tli"><div class="tli-body"><div class="tli-name">JAMAL FOGARTY <span class="pill pma" data-team="MANLY">MANLY HFB</span></div><div class="tli-note">SOS #1&rarr;#17. 69 av / 3rd av 93 off a 113. Niggles affecting goal kicking. Hardest run in comp.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">DAMIEN COOK <span class="pill pdr" data-team="DRAGONS">DRAGONS HOK</span></div><div class="tli-note">65 av, 3rd highest averaging HOK. Dragons cooked. R9 bye gone, R15 coming, SOS #16.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">TREY MOONEY <span class="pill pkn" data-team="KNIGHTS">KNIGHTS FRF</span></div><div class="tli-note">3rd av 65, scored back to back &mdash; saw what happens when he doesn't score on the weekend.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">ARAMA HAU <span class="pill pta" data-team="TITANS">TITANS 2RF</span></div><div class="tli-note">4 tries in 4 games, 5rd av 77. Titans SOS #2&rarr;#14. Sell on that average.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">BEN TRBOJEVIC <span class="pill pma" data-team="MANLY">MANLY 2RF</span></div><div class="tli-note">5rd av 82 / 2 tries 2 assist 4 LBs in 4 games. Manly worst SOS. Burbo has 3rd hardest L2RF SOS.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">SAMUELA FAINU <span class="pill pk" data-team="TIGERS">TIGERS 2RF</span></div><div class="tli-note">75 av. Tigers extremely right dominant, back to back 80-min games. 6th hardest team SOS R9-16.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">LEHI HOPOATE <span class="pill pma" data-team="MANLY">MANLY CTW</span></div><div class="tli-note">6 tries in 4 games, 3rd av 89. Manly worst SOS, Koula returning. 5th hardest CTW SOS.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">JAYDEN CAMPBELL <span class="pill pta" data-team="TITANS">TITANS HFB</span></div><div class="tli-note">84 av but can we trust this Titans team? SOS L#5&rarr;#12. Titans look horrible.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">ISAAH YEO <span class="pill ppa" data-team="PANTHERS">PANTHERS 2RF</span></div><div class="tli-note">Panthers trifecta: double bye + SOS #13 + Origin. Yeo sinks with the ship.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">TOM JENKINS <span class="pill ppa" data-team="PANTHERS">PANTHERS CTW</span></div><div class="tli-note">94 av. CTW SOS #3&rarr;#16 for Panthers. Sell on that 94. Now.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">LUCIANO LEILUA <span class="pill pdr" data-team="DRAGONS">DRAGONS 2RF</span></div><div class="tli-note">3rd av 71. Dragons SOS is cooked and he's Dragon-coloured. Get out.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">JAKE AVERILLO <span class="pill pdo" data-team="DOLPHINS">DOLPHINS CTW</span></div><div class="tli-note">80 av, scored 5/6 games. 5th hardest RC SOS incoming. Played halves on weekend &mdash; scored 20.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">DOM YOUNG <span class="pill pkn" data-team="KNIGHTS">KNIGHTS CTW</span></div><div class="tli-note">Brown back = Young moved, scored 17 then 44. Position disrupted.</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">DYLAN EDWARDS <span class="pill ppa" data-team="PANTHERS">PANTHERS FLB</span></div><div class="tli-note">Scored 6/8 games inc 4 straight, averaging 86. Off a 151. Origin duties. Are the tries hiding something?</div></div><span class="bdg bfl">FLIP</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">KEANO KINI <span class="pill pta" data-team="TITANS">TITANS FLB</span></div><div class="tli-note">4th best FLB SOS but Titans have 4th hardest run and look horrible. SOS can't save a broken team.</div></div><span class="bdg bfl">FLIP</span></div>
+  </div>
+  <hr class="dvd">
+  <div class="sh"><div class="st">UCP WALL OF SHAME</div><div class="ss">USELESS C*NT PUNT &mdash; HARD AVOIDS</div></div>
+  <div class="g4">
+    <div class="card rd"><div class="clbl">UCP</div><div class="ctit">TINO FAASUAMALEAUI</div><div class="cbody">Appears on UCP lists across HOK, FRF and 2RF. Avoid all modes.</div></div>
+    <div class="card rd"><div class="clbl">UCP</div><div class="ctit">BEAU FERMOR</div><div class="cbody">Titans SOS dropping hard. Fermor sinks with the ship.</div></div>
+    <div class="card rd"><div class="clbl">UCP</div><div class="ctit">CONNOR WATSON</div><div class="cbody">Named multiple times. Hard no.</div></div>
+    <div class="card rd"><div class="clbl">UCP</div><div class="ctit">REED MAHONEY</div><div class="cbody">Cowboys HOK. Mentioned twice. Move on.</div></div>
+    <div class="card rd"><div class="clbl">UCP</div><div class="ctit">JAKE SIMPKIN / TOM STARLING</div><div class="cbody">Both HOK &mdash; hard avoids.</div></div>
+    <div class="card rd"><div class="clbl">UCP</div><div class="ctit">BRITON NIKORA</div><div class="cbody">2RF. Hard avoid.</div></div>
+    <div class="card rd"><div class="clbl">UCP</div><div class="ctit">KODI NIKORIMA / BRIMMO</div><div class="cbody">5/8 &mdash; 40 av and below. Avoid.</div></div>
+    <div class="card rd"><div class="clbl">UCP</div><div class="ctit">BRIAN TO'O / PAUL ALAMOTI</div><div class="cbody">Panthers CTW. Despite SOS, trust issues remain.</div></div>
+  </div>
+</div>
+
+<!-- FETCHES -->
+<div id="panel-fetches" class="panel">
+  <div class="sh"><div class="st">TOP 15 FETCH TARGETS</div><div class="ss">BUY NOW &mdash; EASY SCHEDULE INCOMING</div></div>
+  <div class="cbox"><p>These players have <strong>underachieved heading into a soft draw</strong>. Prices are suppressed. Buy before the comp wakes up. This is where you win your league.</p></div>
+  <div class="toplist">
+    <div class="tli"><div class="tli-body"><div class="tli-name">JAMES TEDESCO <span class="pill pr" data-team="ROOSTERS">ROOSTERS FLB</span></div><div class="tli-note">NO ONE IS GIVING HIM UP THOUGH. SOS #10&rarr;#1. 3rd av 100. FLB Pos SOS #1. Best in comp.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">DCE <span class="pill pr" data-team="ROOSTERS">ROOSTERS 5/8</span></div><div class="tli-note">SOS #16&rarr;#1. 61 av, 3rd av 67. Warming up. Walker combo improving. Buy before price explodes.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">SAM WALKER <span class="pill pr" data-team="ROOSTERS">ROOSTERS HFB</span></div><div class="tli-note">SOS #17&rarr;#1. 68 av / 3rd av 100. Price suppressed. Roosters #1 draw. Hard buy.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">LACHLAN GALVIN <span class="pill pb" data-team="BULLDOGS">BULLDOGS HFB</span></div><div class="tli-note">SOS #7&rarr;#3. 68 av. Bulldogs 2nd best draw. Priced for his early struggles.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">CONNOR TRACEY <span class="pill pb" data-team="BULLDOGS">BULLDOGS FLB</span></div><div class="tli-note">Dogs #2 SOS. Tracey 5th best FLB SOS. 48 av &mdash; criminally low. Target now.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">JERMAINE MCEWEN <span class="pill pkn" data-team="KNIGHTS">KNIGHTS 2RF</span></div><div class="tli-note">R2RF SOS #17&rarr;#1. 5rd av 59. Best SOS for right 2RFs. 40% owned. Get him.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">PHOENIX CROSSLAND <span class="pill pkn" data-team="KNIGHTS">KNIGHTS HOK</span></div><div class="tli-note">Team #3 / Pos #2. 3rd av 57. 77+ mins every game. Rotating through lock. Value.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">ATIVALU LISATI <span class="pill ps" data-team="STORM">STORM 2RF</span></div><div class="tli-note">Team #4 / Pos #2. 51 av. Storm #4 incoming draw. Primed for a run.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">SIUA WONG <span class="pill pr" data-team="ROOSTERS">ROOSTERS 2RF</span></div><div class="tli-note">Roosters #1 SOS, R2RF #5. 69 av, 3rd av 79. DCE combo starting to spark.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">ETHAN SANDERS <span class="pill pra" data-team="RAIDERS">RAIDERS HFB</span></div><div class="tli-note">SOS #12&rarr;#4. 49 av. Raiders earliest bye (R11). Flying under radar completely.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">ENARI TUALA <span class="pill pb" data-team="BULLDOGS">BULLDOGS CTW</span></div><div class="tli-note">RC SOS #2, Dogs #2 overall. 48% owned. Crichton Origin = more chances for Tuala.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">GREG MARZHEW <span class="pill pkn" data-team="KNIGHTS">KNIGHTS CTW</span></div><div class="tli-note">SOS #10&rarr;#4. 57 av. Knights huge SOS flip. Priced cheap after quiet start.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">BRADMAN BEST <span class="pill pkn" data-team="KNIGHTS">KNIGHTS CTW</span></div><div class="tli-note">SOS #12&rarr;#4. 56 av. Knights best draw in comp coming. Best has the tools.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">DANIEL TUPOU <span class="pill pr" data-team="ROOSTERS">ROOSTERS CTW</span></div><div class="tli-note">56 av. Roosters #1 SOS. RC Pos SOS #7. Primed for a massive second half.</div></div><span class="bdg bfe">FETCH</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">KALYN PONGA <span class="pill pkn" data-team="KNIGHTS">KNIGHTS FLB</span></div><div class="tli-note">Knights 3rd best SOS. KP FLB SOS #8. Health dependent but the draw sets up perfectly.</div></div><span class="bdg bfe">FETCH</span></div>
+  </div>
+</div>
+
+<!-- FROTHIES -->
+<div id="panel-frothies" class="panel">
+  <div class="sh"><div class="st">FREE AGENT FROTHIES</div><div class="ss">TOP 6 TEAM + POS SOS &middot; LOW OWNERSHIP &mdash; STEAL THE COMP</div></div>
+  <div class="cbox"><p>Top 6 team SOS <strong>AND</strong> top positional SOS sitting low ownership. Get them before the masses.</p></div>
+  <div class="toplist">
+    <div class="tli"><div class="tli-body"><div class="tli-name">JERMAINE MCEWEN <span class="pill pkn" data-team="KNIGHTS">KNIGHTS 2RF</span> <span style="color:var(--teal);font-size:11px">&sim;40%</span></div><div class="tli-note">Best SOS for right 2RFs. Knights SOS #2 overall. 5rd av 59. Must target.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">ENARI TUALA / BRONSON XERRI <span class="pill pb" data-team="BULLDOGS">BULLDOGS CTW</span> <span style="color:var(--teal);font-size:11px">&sim;48% / 36%</span></div><div class="tli-note">RC SOS #2, Dogs #2 SOS. Xerri 36% &mdash; Crichton Origin = more tries for Xerri.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">XAVIER COATES <span class="pill ps" data-team="STORM">STORM CTW</span> <span style="color:var(--teal);font-size:11px">&sim;38%</span></div><div class="tli-note">LW SOS #2, Storm #4. 38% owned. Munster and Cameron combination firing.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">SAVELIO TAMALE <span class="pill pra" data-team="RAIDERS">RAIDERS CTW</span> <span style="color:var(--teal);font-size:11px">&sim;43%</span></div><div class="tli-note">Best SOS for left wing. Raiders #7. 59 av, 43% owned. Stash for run home.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">BRANDON SMITH <span class="pill ps" data-team="STORM">STORM HOK</span> <span style="color:var(--teal);font-size:11px">&sim;27%</span></div><div class="tli-note">27% &mdash; criminally low. Storm #4 SOS incoming.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">FREDDY LUSSICK <span class="pill ppa" data-team="PANTHERS">PANTHERS HOK</span> <span style="color:var(--teal);font-size:11px">&sim;1.9%</span></div><div class="tli-note">1.9%! Team #4 / Pos SOS #1. Extreme stash.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">TEIG WILTON <span class="pill psh" data-team="SHARKS">SHARKS 2RF</span> <span style="color:var(--teal);font-size:11px">&sim;34%</span></div><div class="tli-note">3rd av 52. L2RF SOS #4. 34% owned. Consistent minutes.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">TYRAN WISHART <span class="pill ps" data-team="STORM">STORM HFB/5-8</span> <span style="color:var(--teal);font-size:11px">&sim;24%</span></div><div class="tli-note">Dual pos. 24% owned. Storm #4 SOS. Munster cover. Massive stash value.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">HUGO SAVALA <span class="pill pr" data-team="ROOSTERS">ROOSTERS HFB/5-8</span> <span style="color:var(--teal);font-size:11px">&sim;47%</span></div><div class="tli-note">Dual pos. Roosters #1 SOS. Walker incoming lifts everyone.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">TRAI FULLER <span class="pill pra" data-team="RAIDERS">RAIDERS CTW</span> <span style="color:var(--teal);font-size:11px">&sim;24%</span></div><div class="tli-note">Edwards Origin cover. Raiders #7 SOS. 24% &mdash; get him before Edwards is called up.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">XAVIER WILLISON <span class="pill pkn" data-team="KNIGHTS">KNIGHTS FRF</span> <span style="color:var(--teal);font-size:11px">&sim;37%</span></div><div class="tli-note">Knights FRF top pos SOS. 37% owned. Best draw coming.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">RYAN COUCHMAN <span class="pill pdr" data-team="DRAGONS">DRAGONS 2RF</span> <span style="color:var(--teal);font-size:11px">&sim;43%</span></div><div class="tli-note">63 av, 1.22 PPM. 43% owned. Consistent 80-min performer.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">JEREMIAH NANAI <span class="pill pbo" data-team="COWBOYS">COWBOYS 2RF</span> <span style="color:var(--teal);font-size:11px">&sim;23%</span></div><div class="tli-note">Best SOS for left 2RFs. 23% &mdash; nobody owns him. Cowboys #8 SOS workable.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">JACK COGGER <span class="pill pr" data-team="ROOSTERS">ROOSTERS HFB/5-8</span> <span style="color:var(--teal);font-size:11px">&sim;4%</span></div><div class="tli-note">4%! Roosters #1 SOS. Cleary cover. Extreme stash special.</div></div><span class="bdg bfr">FROTHY</span></div>
+    <div class="tli"><div class="tli-body"><div class="tli-name">FRANCIS MANULELUA <span class="pill pb" data-team="BULLDOGS">BULLDOGS 2RF</span> <span style="color:var(--teal);font-size:11px">Low ownership</span></div><div class="tli-note">Team #3 / Pos #10. Dogs #2 SOS. Under the radar entirely.</div></div><span class="bdg bfr">FROTHY</span></div>
+  </div>
+</div>
+
+<!-- POSITIONAL -->
+<div id="panel-pos" class="panel">
+
+  <div class="pos-sec">
+    <div class="ph"><div class="phn">HOK</div><div class="phnote">Depth position &mdash; underachievers + low ownership is the play</div></div>
+    <div class="g3">
+      <div>
+        <div class="plbl">TOP 5 RUB STAT PLAYS</div>
+        <div class="pc"><div class="prk">1</div><div class="pi"><div class="pn">Phoenix Crossland</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; Team #3 / Pos #2</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">2</div><div class="pi"><div class="pn">Tom Starling</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; Team #7 / Pos #5</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">3</div><div class="pi"><div class="pn">Reed Mahoney</div><div class="ptp"><span class="pill pbo" data-team="COWBOYS">COWBOYS</span> &middot; Team #1 / Pos #9</div><div class="pnote">UCP &mdash; but team SOS is there</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">4</div><div class="pi"><div class="pn">Harry Grant</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> &middot; Team #3 / Pos #4</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">5</div><div class="pi"><div class="pn">Wade Egan</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> &middot; Team #6 / Pos #6</div></div><span class="bdg bhl">PLAY</span></div>
+      </div>
+      <div>
+        <div class="plbl">FLIPS</div>
+        <div class="pc"><div class="pi"><div class="pn">Damien Cook</div><div class="ptp"><span class="pill pdr" data-team="DRAGONS">DRAGONS</span> &middot; 65 av</div><div class="pnote">3rd highest HOK. Dragons cooked. SOS brutal.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">API Koroisau</div><div class="ptp"><span class="pill pk" data-team="TIGERS">TIGERS</span> &middot; 2 tries 1 assist / 2 games</div><div class="pnote">60 av without a try. Dangerous own.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Sandon Smith</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; 3rd av 68</div><div class="pnote">KP around the corner &mdash; minutes at risk.</div></div><span class="bdg bfl">FLIP</span></div>
+      </div>
+      <div>
+        <div class="plbl">FETCHES + FROTHIES</div>
+        <div class="pc"><div class="pi"><div class="pn">Phoenix Crossland</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; 3rd av 57 &middot; 77+ min every game</div><div class="pnote">Rotates through lock. Low price.</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Max Plath</div><div class="ptp"><span class="pill pdo" data-team="DOLPHINS">DOLPHINS</span> &middot; 52 av / 3rd av 59</div><div class="pnote">Back to back 63+ point games.</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Brandon Smith</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> &middot; 27% owned</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Freddy Lussick</div><div class="ptp"><span class="pill ppa" data-team="PANTHERS">PANTHERS</span> &middot; 1.9% &middot; Pos #1</div></div><span class="bdg bfr">FROTHY</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pos-sec">
+    <div class="ph or"><div class="phn">FRF</div><div class="phnote">Cashing in on overachievers</div></div>
+    <div class="g3">
+      <div>
+        <div class="plbl">TOP 5 RUB STAT PLAYS</div>
+        <div class="pc"><div class="prk">1</div><div class="pi"><div class="pn">Stefano Utoikamanu</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> &middot; Team #4 / Pos #1</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">2</div><div class="pi"><div class="pn">Joey Tapine</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; Team #7 / Pos #3</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">3</div><div class="pi"><div class="pn">Leo Thompson</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; Team #2 / Pos #4</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">4</div><div class="pi"><div class="pn">Tino Faasuamaleaui</div><div class="ptp"><span class="pill pta" data-team="TITANS">TITANS</span> &middot; Team #14 / Pos #6</div><div class="pnote">Also UCP &mdash; high risk</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">5</div><div class="pi"><div class="pn">Naf Whyte</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; Team #1 / Pos #7</div></div><span class="bdg bhl">PLAY</span></div>
+      </div>
+      <div>
+        <div class="plbl">FLIPS</div>
+        <div class="pc"><div class="pi"><div class="pn">Jackson Ford</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; 5 x 100+ games &middot; 3 straight 80-min</div><div class="pnote">Sell on that peak. Regression likely.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Isaiah Papalii</div><div class="ptp"><span class="pill ppa" data-team="PANTHERS">PANTHERS</span> &middot; 2nd hardest FRF SOS</div><div class="pnote">Panthers 7th hardest. 59 av without attacking stats.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Alex Twal</div><div class="ptp"><span class="pill pk" data-team="TIGERS">TIGERS</span> &middot; 5rd av 92 / 125 last round</div><div class="pnote">70+ mins 5 straight. Sell on that 125.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">JFH / Big Red (Lindsay Smith)</div><div class="ptp"><span class="pill pwa" data-team="WARRIORS">WARRIORS</span></div><div class="pnote">Warriors SOS declining. Move on.</div></div><span class="bdg bucp">UCP</span></div>
+      </div>
+      <div>
+        <div class="plbl">FETCHES + FROTHIES</div>
+        <div class="pc"><div class="pi"><div class="pn">Tino Faasuamaleaui</div><div class="ptp"><span class="pill pta" data-team="TITANS">TITANS</span> &middot; 51 av</div><div class="pnote">Suppressed price. Pos #6. High risk play.</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Lindsay Smith / Mitch Barnett</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> / <span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span></div><div class="pnote">Storm and Knights incoming draw.</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="pi"><div class="pn">AFB / Naf Whyte</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> / <span class="pill pr" data-team="ROOSTERS">ROOSTERS</span></div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Junior Paulo</div><div class="ptp"><span class="pill pe" data-team="EELS">EELS</span> &middot; 40%</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Xavier Willison</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; 37%</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Ben Talty</div><div class="ptp"><span class="pill pbr" data-team="BRONCOS">BRONCOS</span> &middot; 4% &middot; stash only</div></div><span class="bdg bfr">FROTHY</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pos-sec">
+    <div class="ph tl"><div class="phn">2RF</div><div class="phnote">Deepest position &mdash; biggest separators</div></div>
+    <div class="g2">
+      <div>
+        <div class="plbl">TOP RUB STAT PLAYS</div>
+        <div class="pc"><div class="prk">1</div><div class="pi"><div class="pn">Ativalu Lisati</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> &middot; L2RF &middot; Team #4 / Pos #2</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">2</div><div class="pi"><div class="pn">Jermaine McEwen</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; R2RF &middot; Best R2RF SOS</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">3</div><div class="pi"><div class="pn">Siua Wong</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; R2RF &middot; Team #1 / Pos #5</div><div class="pnote">SOS incredible. DCE combo sparking. 3rd av 79.</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">4</div><div class="pi"><div class="pn">Noah Martin</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; L2RF &middot; Team #11 / Pos #2</div><div class="pnote">Injury watch &mdash; Hudson Young Origin cover.</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">5</div><div class="pi"><div class="pn">Connelly Lemuelu</div><div class="ptp"><span class="pill pdo" data-team="DOLPHINS">DOLPHINS</span> &middot; L2RF &middot; Team #13 / Pos #3</div><div class="pnote">All 80-min games. 65 av. Pos SOS #3.</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">6</div><div class="pi"><div class="pn">Angus Crichton</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; L2RF &middot; Team #1 / Pos #7</div><div class="pnote">58 av. SOS #14&rarr;#7. Origin pep. Walker combo.</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">7</div><div class="pi"><div class="pn">Leka Halasima</div><div class="ptp"><span class="pill pwa" data-team="WARRIORS">WARRIORS</span> &middot; R2RF &middot; Team #6 / Pos #3</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">8</div><div class="pi"><div class="pn">Viliame Kikau</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; L2RF &middot; Team #8 / Pos #5</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">9</div><div class="pi"><div class="pn">Francis Manulelua</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; L2RF &middot; Team #3 / Pos #10</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">10</div><div class="pi"><div class="pn">Hudson Young</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; L2RF &middot; Team #7 / Pos #6</div></div><span class="bdg bhl">PLAY</span></div>
+      </div>
+      <div>
+        <div class="plbl">FLIPS</div>
+        <div class="pc"><div class="pi"><div class="pn">Ben Trbojevic</div><div class="ptp"><span class="pill pma" data-team="MANLY">MANLY</span> &middot; 5rd av 82</div><div class="pnote">Manly worst SOS. Burbo 3rd hardest L2RF SOS. Sell.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Haumole Olokauatu</div><div class="ptp"><span class="pill pma" data-team="MANLY">MANLY</span> &middot; off an 88</div><div class="pnote">Manly hardest SOS period. Classic sell-high.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jordan Riki</div><div class="ptp"><span class="pill pbr" data-team="BRONCOS">BRONCOS</span> &middot; 5rd av 71</div><div class="pnote">Broncos double bye + SOS #15. Get out.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Heilum Luki</div><div class="ptp"><span class="pill pbo" data-team="COWBOYS">COWBOYS</span> &middot; avg 74 &middot; 3 tries 1 ast 4 LBs last 5</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Samuela Fainu</div><div class="ptp"><span class="pill pk" data-team="TIGERS">TIGERS</span> &middot; 75 av &middot; back to back 80s</div><div class="pnote">Tigers 6th hardest SOS. Sell.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jaydn Sua</div><div class="ptp"><span class="pill pdr" data-team="DRAGONS">DRAGONS</span></div><div class="pnote">Dragons are cooked. Simple.</div></div><span class="bdg bucp">UCP</span></div>
+        <div class="plbl">FROTHIES</div>
+        <div class="pc"><div class="pi"><div class="pn">Ryan Couchman</div><div class="ptp"><span class="pill pdr" data-team="DRAGONS">DRAGONS</span> &middot; 43% &middot; 63 av &middot; 1.22 PPM</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jeremiah Nanai</div><div class="ptp"><span class="pill pbo" data-team="COWBOYS">COWBOYS</span> &middot; 23% &middot; Best L2RF SOS</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jack Williams</div><div class="ptp"><span class="pill pe" data-team="EELS">EELS</span> &middot; 47% &middot; dual pos &middot; 76+ min last 4</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Teig Wilton</div><div class="ptp"><span class="pill psh" data-team="SHARKS">SHARKS</span> &middot; 34% &middot; L2RF SOS #4</div></div><span class="bdg bfr">FROTHY</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pos-sec">
+    <div class="ph"><div class="phn">HFB &amp; 5/8</div></div>
+    <div class="g2">
+      <div>
+        <div class="plbl">TOP RUB STAT PLAYS</div>
+        <div class="pc"><div class="prk">1</div><div class="pi"><div class="pn">Sam Walker</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; HFB &middot; Team #1 / Pos #1</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">2</div><div class="pi"><div class="pn">DCE</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; 5/8 &middot; Team #1 / Pos #1</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">3</div><div class="pi"><div class="pn">Jahrome Hughes</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> &middot; HFB &middot; Team #4 / Pos #2</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">4</div><div class="pi"><div class="pn">Lachlan Galvin</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; HFB &middot; Team #2 / Pos #3</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">5</div><div class="pi"><div class="pn">Cody Walker</div><div class="ptp"><span class="pill pbun" data-team="BUNNIES">BUNNIES</span> &middot; 5/8 &middot; Team #5 / Pos #2</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">6</div><div class="pi"><div class="pn">Cam Munster</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> &middot; 5/8 &middot; Team #4 / Pos #3</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">7</div><div class="pi"><div class="pn">Ethan Sanders</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; HFB &middot; Team #7 / Pos #4</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">8</div><div class="pi"><div class="pn">Ethan Strange</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; 5/8 &middot; Team #7 / Pos #4</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">9</div><div class="pi"><div class="pn">Matt Burton</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; 5/8 &middot; Team #2 / Pos #5</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">10</div><div class="pi"><div class="pn">Tanah Boyd</div><div class="ptp"><span class="pill pwa" data-team="WARRIORS">WARRIORS</span> &middot; HFB &middot; Team #5 / Pos #7</div></div><span class="bdg bhl">PLAY</span></div>
+      </div>
+      <div>
+        <div class="plbl">FLIPS</div>
+        <div class="pc"><div class="pi"><div class="pn">Jamal Fogarty</div><div class="ptp"><span class="pill pma" data-team="MANLY">MANLY</span> &middot; SOS #1&rarr;#17 &middot; 3rd av 93</div><div class="pnote">Off a 113. Niggles. Manly worst SOS. SELL NOW.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Adam Doueihi</div><div class="ptp"><span class="pill pk" data-team="TIGERS">TIGERS</span> &middot; 95 av &middot; SOS #3&rarr;#16</div><div class="pnote">Signs of body not coping. Is this the real Doueihi?</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jayden Campbell</div><div class="ptp"><span class="pill pta" data-team="TITANS">TITANS</span> &middot; 84 av &middot; L#5&rarr;#12</div><div class="pnote">Titans look horrible. Can we trust them?</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jake Clifford</div><div class="ptp"><span class="pill pbo" data-team="COWBOYS">COWBOYS</span> &middot; 8th hardest SOS &middot; 75 av</div><div class="pnote">5rd av 81. Do we believe it?</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jarome Luai</div><div class="ptp"><span class="pill ppa" data-team="PANTHERS">PANTHERS</span> &middot; 72 av</div><div class="pnote">1 try 5 assists &rarr; scored 27 in R7. Regression.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Blaize Talagi</div><div class="ptp"><span class="pill ppa" data-team="PANTHERS">PANTHERS</span> &middot; 5th hardest SOS</div><div class="pnote">3rd av 59. Time to sell.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="plbl">FETCHES + FROTHIES</div>
+        <div class="pc"><div class="pi"><div class="pn">Fletcher Sharpe</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; 49 av &middot; banged up</div><div class="pnote">Strike now. Knights SOS exploding R9-16.</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Dylan Brown</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; HFB &middot; 55 av</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Hugo Savala</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; HFB/5-8 &middot; 47%</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Tyran Wishart</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> &middot; HFB/5-8 &middot; 24%</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jack Cogger / Ronald Volkman</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> / <span class="pill pe" data-team="EELS">EELS</span></div></div><span class="bdg bfr">FROTHY</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pos-sec">
+    <div class="ph tl"><div class="phn">CTW &amp; FLB</div></div>
+    <div class="g2">
+      <div>
+        <div class="plbl">TOP RUB STAT PLAYS</div>
+        <div class="pc"><div class="prk">1</div><div class="pi"><div class="pn">James Tedesco</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; FLB &middot; Team #1 / Pos #1</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">2</div><div class="pi"><div class="pn">Mark Nawaqanitawase</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; RW &middot; Team #1 / Pos #6</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">3</div><div class="pi"><div class="pn">Enari Tuala</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; RC &middot; Team #2 / Pos #2</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">4</div><div class="pi"><div class="pn">Connor Tracey</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; FLB &middot; Team #2 / Pos #5</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">5</div><div class="pi"><div class="pn">Rob Toia</div><div class="ptp"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; RC &middot; Team #1 / Pos #5</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">6</div><div class="pi"><div class="pn">Matty Timoko</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; LC &middot; Team #7 / Pos #1</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">7</div><div class="pi"><div class="pn">Bradman Best</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; RC &middot; Team #3 / Pos #4</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">8</div><div class="pi"><div class="pn">Greg Marzhew</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; CTW &middot; Team #3 / Pos #4</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">9</div><div class="pi"><div class="pn">Nick Meaney</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> &middot; CTW &middot; Team #4 / Pos #2</div><div class="pnote">Also on UCP list &mdash; dual nature</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">10</div><div class="pi"><div class="pn">Seb Kris</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; RC &middot; Team #7 / Pos #1</div></div><span class="bdg bhl">PLAY</span></div>
+        <div class="pc"><div class="prk">11</div><div class="pi"><div class="pn">Kalyn Ponga</div><div class="ptp"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; FLB &middot; Team #3 / Pos #8</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="prk">12</div><div class="pi"><div class="pn">Simi Sasagi</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; CTW &middot; Team #7 / Pos #6</div></div><span class="bdg bhl">PLAY</span></div>
+      </div>
+      <div>
+        <div class="plbl">FLIPS</div>
+        <div class="pc"><div class="pi"><div class="pn">Tom Jenkins</div><div class="ptp"><span class="pill ppa" data-team="PANTHERS">PANTHERS</span> &middot; 94 av &middot; CTW SOS #3&rarr;#16</div><div class="pnote">Sell on that 94. Now.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Casey McLean</div><div class="ptp"><span class="pill ppa" data-team="PANTHERS">PANTHERS</span> &middot; SOS #3&rarr;#13 &middot; 3rd av 80</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Lehi Hopoate</div><div class="ptp"><span class="pill pma" data-team="MANLY">MANLY</span> &middot; 3rd av 89 &middot; 5th hardest CTW</div><div class="pnote">6 tries in 4 games. Manly dumpster fire incoming.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Sunia Turuva</div><div class="ptp"><span class="pill pk" data-team="TIGERS">TIGERS</span> &middot; 3rd av 93 &middot; 6th hardest SOS</div><div class="pnote">Cashing in on Tigers hot start.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jake Averillo</div><div class="ptp"><span class="pill pdo" data-team="DOLPHINS">DOLPHINS</span> &middot; 80 av &middot; 5th hardest RC</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Dylan Edwards</div><div class="ptp"><span class="pill ppa" data-team="PANTHERS">PANTHERS</span> &middot; FLB &middot; 86 av &middot; Origin</div><div class="pnote">Off a 151. Are the tries hiding something?</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Jahream Biula</div><div class="ptp"><span class="pill pk" data-team="TIGERS">TIGERS</span> &middot; FLB &middot; 2nd hardest FLB SOS</div><div class="pnote">Cashing in on Tigers hot start.</div></div><span class="bdg bfl">FLIP</span></div>
+        <div class="plbl">FETCHES + FROTHIES</div>
+        <div class="pc"><div class="pi"><div class="pn">Stephen Crichton / Daniel Tupou</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> / <span class="pill pr" data-team="ROOSTERS">ROOSTERS</span></div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Connor Tracey / Jye Grey</div><div class="ptp"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> / <span class="pill pbun" data-team="BUNNIES">BUNNIES</span> &middot; FLB</div></div><span class="bdg bfe">FETCH</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Xavier Coates / Bronson Xerri</div><div class="ptp"><span class="pill ps" data-team="STORM">STORM</span> / <span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; LW/RC</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Savelio Tamale / Ronaldo Mulitalo</div><div class="ptp"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> / <span class="pill psh" data-team="SHARKS">SHARKS</span> &middot; LW</div></div><span class="bdg bfr">FROTHY</span></div>
+        <div class="pc"><div class="pi"><div class="pn">Matt Dufty / Trai Fuller / Cody Ramsey</div><div class="ptp">FLB frothies &mdash; low ownership</div></div><span class="bdg bfr">FROTHY</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ORIGIN -->
+<div id="panel-origin" class="panel">
+  <div class="sh"><div class="st">STATE OF ORIGIN</div><div class="ss">HANDCUFFS &amp; BYE ROUND SAVIOURS</div></div>
+  <div class="cbox">
+    <p><strong>STOP POD FOR THE MASSES</strong> &mdash; Origin players miss rounds and this wrecks bye coverage. Know your covers before it's too late.</p>
+    <p>Key plays: <strong>Enari Tuala / Xerri</strong> for Crichton. <strong>Jack Cogger / Hugo Savala</strong> for Cleary. <strong>Trai Fuller</strong> for Edwards. <strong>Tyran Wishart</strong> for Munster.</p>
+  </div>
+  <div class="og">
+    <div>
+      <div class="oth onsw">NSW BLUES</div>
+      <div class="or2"><div class="opl">1. Dylan Edwards (FLB)</div><div class="ocv">Cover: Trai Fuller</div></div>
+      <div class="or2"><div class="opl">2. Brian To'o (CTW)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">3. Latrell Mitchell (CTW)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">4. Stephen Crichton (CTW)</div><div class="ocv">Cover: Enari Tuala / Xerri</div></div>
+      <div class="or2"><div class="opl">5. Mark Nawaqanitawase (CTW)</div><div class="ocv">Cover: Junior Pauga</div></div>
+      <div class="or2"><div class="opl">6. Mitch Moses (HFB)</div><div class="ocv">Cover: Pezet / Joash</div></div>
+      <div class="or2"><div class="opl">7. Nathan Cleary (HFB)</div><div class="ocv">Cover: Jack Cogger</div></div>
+      <div class="or2"><div class="opl">8. Isaah Yeo (2RF)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">9. Blayke Brailey (HOK)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">10. AFB (FRF)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">11. Angus Crichton (2RF)</div><div class="ocv">Cover: Nat Butcher</div></div>
+      <div class="or2"><div class="opl">12. Hudson Young (2RF)</div><div class="ocv">Cover: Zac Hosking / Noah Martin</div></div>
+      <div class="or2"><div class="opl">13. Cam Murray (2RF)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">14. Matt Burton (5/8)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">15. Terrell May (FRF)</div><div class="ocv">Cover: Fonua Pole</div></div>
+      <div class="or2"><div class="opl">16. Spencer Leniu (FRF)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">17. Jacon Preston (FRF)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">18. Api Koroisau (HOK)</div><div class="ocv">&mdash;</div></div>
+    </div>
+    <div>
+      <div class="oth oqld">QLD MAROONS</div>
+      <div class="or2"><div class="opl">1. Hamiso Tabuai-Fidow (FLB)</div><div class="ocv">Cover: Trai Fuller</div></div>
+      <div class="or2"><div class="opl">2. Val Holmes (CTW)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">3. Robert Toia (CTW)</div><div class="ocv">Cover: Billy Smith / Hugo Savala</div></div>
+      <div class="or2"><div class="opl">4. Gehamat Shibasaki (CTW)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">5. Selwyn Cobbo (CTW)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">6. Cam Munster (5/8)</div><div class="ocv">Cover: Tyran Wishart</div></div>
+      <div class="or2"><div class="opl">7. Tom Dearden (HFB)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">8. Tino Faasuamaleaui (FRF)</div><div class="ocv">Cover: Kurtis Morrin / Cooper Bai</div></div>
+      <div class="or2"><div class="opl">9. Harry Grant (HOK)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">10. Patty Carrigan (2RF)</div><div class="ocv">Cover: Xavier Willison</div></div>
+      <div class="or2"><div class="opl">11. Kulikefu Finefeuiaki (2RF)</div><div class="ocv">Cover: Orynn Keeley / Tom Gilbert / Max Plath</div></div>
+      <div class="or2"><div class="opl">12. Reuben Cotter (2RF)</div><div class="ocv">Cover: Harrison Edwards?</div></div>
+      <div class="or2"><div class="opl">13. Trent Loiero (2RF)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">14. Tino/Lindsay Collins (FRF)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">15. Jaxon Purdue (CTW)</div><div class="ocv">Cover: Zac Laybutt</div></div>
+      <div class="or2"><div class="opl">16. Max Plath (2RF/HOK)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">17. Ezra Mam (5/8)</div><div class="ocv">&mdash;</div></div>
+      <div class="or2"><div class="opl">18. Trent Loiero (2RF)</div><div class="ocv">&mdash;</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- DREAM TEAM -->
+<div id="panel-dream" class="panel">
+  <div class="sh"><div class="st">BATTLE OF MIDWAY DREAM TEAM</div><div class="ss">THE IDEAL SQUAD R9&ndash;16</div></div>
+  <div class="cbox"><p>The <strong>RUB STATS optimal squad</strong> for the Battle of Midway period. Best SOS, best value, best draw. Build toward this.</p></div>
+  <div class="dt-grid">
+    <div class="dt-card"><div class="dt-pos">HOK</div><div class="dt-name">Phoenix Crossland</div><div class="dt-sub"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; Team #3 / Pos #2</div></div>
+    <div class="dt-card"><div class="dt-pos">HOK ALT</div><div class="dt-name">Max Plath</div><div class="dt-sub"><span class="pill pdo" data-team="DOLPHINS">DOLPHINS</span> &middot; Dual pos backup</div></div>
+    <div class="dt-card"><div class="dt-pos">FRF</div><div class="dt-name">Stefano Utoikamanu</div><div class="dt-sub"><span class="pill ps" data-team="STORM">STORM</span> &middot; Team #4 / Pos #1</div></div>
+    <div class="dt-card"><div class="dt-pos">FRF</div><div class="dt-name">Joey Tapine</div><div class="dt-sub"><span class="pill pra" data-team="RAIDERS">RAIDERS</span> &middot; Team #7 / Pos #3</div></div>
+    <div class="dt-card"><div class="dt-pos">2RF</div><div class="dt-name">Jermaine McEwen</div><div class="dt-sub"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; Best R2RF SOS</div></div>
+    <div class="dt-card"><div class="dt-pos">2RF</div><div class="dt-name">Siua Wong</div><div class="dt-sub"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; Team #1 / Pos #5</div></div>
+    <div class="dt-card"><div class="dt-pos">2RF</div><div class="dt-name">Ativalu Lisati</div><div class="dt-sub"><span class="pill ps" data-team="STORM">STORM</span> &middot; Alt: Noah Martin</div></div>
+    <div class="dt-card"><div class="dt-pos">HFB</div><div class="dt-name">Sam Walker</div><div class="dt-sub"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; SOS #17 &rarr; #1</div></div>
+    <div class="dt-card"><div class="dt-pos">5/8</div><div class="dt-name">DCE</div><div class="dt-sub"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; SOS #16 &rarr; #1</div></div>
+    <div class="dt-card"><div class="dt-pos">CTW</div><div class="dt-name">Enari Tuala / Bronson Xerri</div><div class="dt-sub"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; RC SOS #2</div></div>
+    <div class="dt-card"><div class="dt-pos">CTW</div><div class="dt-name">Daniel Tupou</div><div class="dt-sub"><span class="pill pr" data-team="ROOSTERS">ROOSTERS</span> &middot; RC SOS #7</div></div>
+    <div class="dt-card"><div class="dt-pos">CTW</div><div class="dt-name">Greg Marzhew</div><div class="dt-sub"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; CTW SOS #4</div></div>
+    <div class="dt-card"><div class="dt-pos">CTW</div><div class="dt-name">Bradman Best</div><div class="dt-sub"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; SOS #12 &rarr; #4</div></div>
+    <div class="dt-card"><div class="dt-pos">FLB</div><div class="dt-name">Kalyn Ponga</div><div class="dt-sub"><span class="pill pkn" data-team="KNIGHTS">KNIGHTS</span> &middot; Team #3 / Pos #8</div></div>
+    <div class="dt-card"><div class="dt-pos">FLEX</div><div class="dt-name">Lachlan Galvin</div><div class="dt-sub"><span class="pill pb" data-team="BULLDOGS">BULLDOGS</span> &middot; SOS #7 &rarr; #3</div></div>
+  </div>
+
+  <hr class="dvd">
+  <div class="sh"><div class="st">THE GOLDEN TRIO</div><div class="ss">BUILD AROUND THESE TEAMS</div></div>
+  <div class="g3">
+    <div class="card gn">
+      <div class="clbl">&#127942; TEAM OF THE MIDWAY</div>
+      <div class="ctit">ROOSTERS</div>
+      <div class="cmta">SOS #15 &rarr; #1 &middot; One Bye (R12)</div>
+      <div class="cbody">Walker, Tedesco, DCE, Siua Wong, Naf Whyte, Tupou, Nawaqanitawase, Savala, Crichton. Load up on every single one. The draw is the best in the comp.</div>
+    </div>
+    <div class="card gn">
+      <div class="clbl">&#129352; SECOND BEST DRAW</div>
+      <div class="ctit">BULLDOGS</div>
+      <div class="cmta">SOS #7 &rarr; #2 &middot; One Bye (R15)</div>
+      <div class="cbody">Galvin, Tuala/Xerri, Tracey, Burton, Kikau, Thompson. The comp hasn't woken up to this yet. Buy everything.</div>
+    </div>
+    <div class="card tl">
+      <div class="clbl">&#9889; CONSISTENT QUALITY</div>
+      <div class="ctit">STORM</div>
+      <div class="cmta">SOS #4 &rarr; #4 &middot; One Bye (R12)</div>
+      <div class="cbody">Consistent draw throughout. Munster, Meaney, Coates, Utoikamanu, Hughes, Lisati. Premium pricing justified.</div>
+    </div>
+  </div>
+
+  <hr class="dvd">
+  <div class="sh"><div class="st">SELL EVERYTHING</div><div class="ss">MANLY, DRAGONS, BRONCOS, PANTHERS &mdash; GET OUT NOW</div></div>
+  <div class="g4">
+    <div class="card rd">
+      <div class="clbl">&#128308; SELL</div>
+      <div class="ctit">MANLY</div>
+      <div class="cmta">SOS #1 &rarr; #17 &middot; Worst draw R9-16</div>
+      <div class="cbody">Fogarty, Hopoate, Ben Trbo, Brooks &mdash; sell them all. Prices still inflated.</div>
+    </div>
+    <div class="card rd">
+      <div class="clbl">&#128308; SELL</div>
+      <div class="ctit">DRAGONS</div>
+      <div class="cmta">SOS #16 &middot; Double bye &middot; R9+R15</div>
+      <div class="cbody">Cook, Leilua, Jaydn Sua &mdash; cooked on all levels. Get out now.</div>
+    </div>
+    <div class="card rd">
+      <div class="clbl">&#128308; SELL</div>
+      <div class="ctit">BRONCOS</div>
+      <div class="cmta">SOS #15 &middot; Double bye &middot; Origin carnage</div>
+      <div class="cbody">Haas, Carrigan, Riki, Mam &mdash; three reasons to sell: SOS, double bye, Origin.</div>
+    </div>
+    <div class="card rd">
+      <div class="clbl">&#128308; SELL</div>
+      <div class="ctit">PANTHERS</div>
+      <div class="cmta">SOS #13 &middot; Double bye &middot; Origin triple</div>
+      <div class="cbody">Cleary, Edwards, To'o, Jenkins, McLean, Luai, Talagi &mdash; the trifecta of pain.</div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="ftr">
+  <img src="https://raw.githubusercontent.com/TheRubDown/TheRubDown.github.io/refs/heads/main/rubstats_logo.png"
+       onerror="this.style.display='none'"
+       style="height:50px;object-fit:contain;margin-bottom:12px;opacity:0.85;filter:drop-shadow(0 0 6px rgba(201,168,50,0.3))">
+  <div class="flog">THE WEEKLY RUB DOWN PODCAST &middot; PATREON.COM/RUBBERSTATS</div>
+</div>
+
+<script>
+function showTab(id,el){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+
+
+</body>
+</html>
 .hsub{font-size:13px;color:var(--dim);letter-spacing:2px;margin-top:6px;font-weight:300}
 .hr{display:flex;flex-direction:column;align-items:flex-end;gap:8px;position:relative;z-index:1}
 .rbadge{background:var(--orange);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;padding:6px 16px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
